@@ -1,0 +1,329 @@
+{
+  "version": 1,
+  "name": "FoodDrop",
+  "tables": [
+    {
+      "id": "UgTpjChEASTgvPOAM_DvI",
+      "name": "cuisines",
+      "x": -2144,
+      "y": -656,
+      "columns": [
+        {
+          "id": "9uTdCuuOlaUh4j-ZqFtsE",
+          "name": "cuisine_name",
+          "dataType": "VARCHAR(50)",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "id": "74h1I47REzECsRn5HyWPU",
+          "name": "cuisine_id",
+          "dataType": "INT UNSIGNED",
+          "isPrimaryKey": true
+        }
+      ]
+    },
+    {
+      "id": "largZuvs_W4JuoXGd5LT_",
+      "name": "vendors",
+      "x": -1648,
+      "y": -768,
+      "columns": [
+        {
+          "id": "GqFKCYdak0KZelo_LymLb",
+          "name": "vendor_id",
+          "dataType": "INT UNSIGNED",
+          "isPrimaryKey": true
+        },
+        {
+          "id": "TCe7mgPVyj-fo5w6wD997",
+          "name": "vendor_name",
+          "dataType": "VARCHAR(100)",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "id": "kknL2_iBW2uwOPirN5uDg",
+          "name": "mobile_number",
+          "dataType": "VARCHAR(20)",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "id": "Lr2ED0ceYRutUZ_bscYaR",
+          "name": "password",
+          "dataType": "VARCHAR(255)",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "id": "2unX4GLeYTuepJxPQqihs",
+          "name": "unit_number",
+          "dataType": "VARCHAR(20)",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "id": "jgf5osA0auNd544Nd-0VD",
+          "name": "building_name",
+          "dataType": "VARCHAR(100)",
+          "isPrimaryKey": false,
+          "isNullable": true
+        },
+        {
+          "id": "4nm0KsuT60gVtrmto0V87",
+          "name": "street_name",
+          "dataType": "VARCHAR(150)",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "id": "6NbLQ6p06Ud3jX5dXsOSZ",
+          "name": "postal_code",
+          "dataType": "VARCHAR(10)",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "id": "-An0ZpW1GSMHfwVtf9SAB",
+          "name": "latitude",
+          "dataType": "DECIMAL(9,6)",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "id": "SxkhxeLbI9M3c79wZ9UW0",
+          "name": "longitude",
+          "dataType": "DECIMAL(9,6)",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "id": "rwVjQmoO7jz6RT6_tnhBN",
+          "name": "created_at",
+          "dataType": "TIMESTAMP",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "id": "trv0GpN-KgQT4Yj8S5ag5",
+          "name": "updated_at",
+          "dataType": "TIMESTAMP",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "id": "PmAPw3FI7E19XabGqKDUN",
+          "name": "cuisine_id",
+          "dataType": "INT UNSIGNED",
+          "isPrimaryKey": false,
+          "isNullable": false
+        }
+      ]
+    },
+    {
+      "id": "-8ixDsR-zU_WWh1mRERU0",
+      "name": "offers",
+      "x": -1648,
+      "y": -288,
+      "columns": [
+        {
+          "id": "yVaHnNUZ6Z-Cc2kkRqunl",
+          "name": "offer_id",
+          "dataType": "INT UNSIGNED",
+          "isPrimaryKey": true
+        },
+        {
+          "id": "OAfgGbN4FRhF5KH7AVU6d",
+          "name": "offer_description",
+          "dataType": "TEXT",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "id": "l4bQ8m3vSfncAqZXs9eF4",
+          "name": "expiry_time",
+          "dataType": "DATETIME",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "id": "TZxXf-S3FESWM4Gon57BQ",
+          "name": "created_at",
+          "dataType": "TIMESTAMP",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "id": "BuFBQ8pQ9aVKzIvZde8rl",
+          "name": "vendor_id",
+          "dataType": "INT UNSIGNED",
+          "isPrimaryKey": false,
+          "isNullable": false
+        }
+      ]
+    },
+    {
+      "id": "aLmQp-J5WXwrKJDxGXVOa",
+      "name": "users",
+      "x": -1088,
+      "y": -768,
+      "columns": [
+        {
+          "id": "l3XoFNMaErCBUDy_P1pR3",
+          "name": "user_id",
+          "dataType": "INT UNSIGNED",
+          "isPrimaryKey": true
+        },
+        {
+          "id": "Eh01cahXVvw0xhIRbRQJ4",
+          "name": "mobile_number",
+          "dataType": "VARCHAR(20)",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "id": "miksvv4qOq3T4RUjZWPPX",
+          "name": "password",
+          "dataType": "VARCHAR(255)",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "id": "eEeU5oNm7uXrVncThKHxw",
+          "name": "created_at",
+          "dataType": "TIMESTAMP",
+          "isPrimaryKey": false,
+          "isNullable": false
+        }
+      ]
+    },
+    {
+      "id": "QgUEKrDoOPw1Ao5u4FT0m",
+      "name": "redemptions",
+      "x": -1088,
+      "y": -512,
+      "columns": [
+        {
+          "id": "5UAX0tvRgwpUEtawC5dqT",
+          "name": "redemption_id",
+          "dataType": "INT UNSIGNED",
+          "isPrimaryKey": true
+        },
+        {
+          "id": "rTqq8weK57xYq4diFE-Kc",
+          "name": "redeemed_at",
+          "dataType": "TIMESTAMP",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "id": "kmNOfkgy2EL2UiBLgHGQZ",
+          "name": "offer_id",
+          "dataType": "INT UNSIGNED",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "id": "2mbU8mWEGc39KXn9Mwg_R",
+          "name": "user_id",
+          "dataType": "INT UNSIGNED",
+          "isPrimaryKey": false,
+          "isNullable": false
+        }
+      ]
+    },
+    {
+      "id": "KcnLOI7xvIMmo9lcGPj25",
+      "name": "notes",
+      "x": -1088,
+      "y": -256,
+      "columns": [
+        {
+          "id": "u8_OjxntzNymGA_48jRMi",
+          "name": "note_id",
+          "dataType": "INT UNSIGNED",
+          "isPrimaryKey": true
+        },
+        {
+          "id": "I2Ww9kfhP6htbkii7qBk4",
+          "name": "redemption_id",
+          "dataType": "INT UNSIGNED",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "id": "th_KdfuRkIVyc0diNv9CQ",
+          "name": "note_text",
+          "dataType": "text",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "id": "M73gjkBzd2M59JqxgFzi9",
+          "name": "created_at",
+          "dataType": "TIMESTAMP",
+          "isPrimaryKey": false,
+          "isNullable": false
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "TjZCspT8dEhYfwxGM_Tps",
+      "sourceTableId": "largZuvs_W4JuoXGd5LT_",
+      "targetTableId": "UgTpjChEASTgvPOAM_DvI",
+      "mappings": [
+        {
+          "sourceColumnId": "PmAPw3FI7E19XabGqKDUN",
+          "targetColumnId": "74h1I47REzECsRn5HyWPU"
+        }
+      ]
+    },
+    {
+      "id": "AOYM2cjOrgj_JKFxQbQBf",
+      "sourceTableId": "-8ixDsR-zU_WWh1mRERU0",
+      "targetTableId": "largZuvs_W4JuoXGd5LT_",
+      "mappings": [
+        {
+          "sourceColumnId": "BuFBQ8pQ9aVKzIvZde8rl",
+          "targetColumnId": "GqFKCYdak0KZelo_LymLb"
+        }
+      ]
+    },
+    {
+      "id": "er5Fy-xD6b-22hOPK7fGm",
+      "sourceTableId": "QgUEKrDoOPw1Ao5u4FT0m",
+      "targetTableId": "-8ixDsR-zU_WWh1mRERU0",
+      "mappings": [
+        {
+          "sourceColumnId": "kmNOfkgy2EL2UiBLgHGQZ",
+          "targetColumnId": "yVaHnNUZ6Z-Cc2kkRqunl"
+        }
+      ]
+    },
+    {
+      "id": "YbGI3dOILK17tGF1W4OZQ",
+      "sourceTableId": "QgUEKrDoOPw1Ao5u4FT0m",
+      "targetTableId": "aLmQp-J5WXwrKJDxGXVOa",
+      "mappings": [
+        {
+          "sourceColumnId": "2mbU8mWEGc39KXn9Mwg_R",
+          "targetColumnId": "l3XoFNMaErCBUDy_P1pR3"
+        }
+      ]
+    },
+    {
+      "id": "U4dHbnzyMtFt0LSCc6o_Q",
+      "sourceTableId": "KcnLOI7xvIMmo9lcGPj25",
+      "targetTableId": "QgUEKrDoOPw1Ao5u4FT0m",
+      "mappings": [
+        {
+          "sourceColumnId": "I2Ww9kfhP6htbkii7qBk4",
+          "targetColumnId": "5UAX0tvRgwpUEtawC5dqT"
+        }
+      ]
+    }
+  ]
+}
