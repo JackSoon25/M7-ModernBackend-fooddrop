@@ -12,13 +12,16 @@ app.set('view engine', 'ejs');
 // tell EJS which layout to see
 app.set('layout', 'layout/base');
 
+// rename router
+const { router: cuisineRouter } = require('./cuisineRouter');
+
 // link to MariaDB via db.js
 const {connection} = require('./db');
 // call different routers for vendors, users, offers, and cuisines
 // app.use('/vendors', vendorRouter);
 // app.use('/users', userRouter);
 // app.use('/offers', offerRouter);
-// app.use('/cuisine', cuisineRouter);
+app.use('/cuisine', cuisineRouter);
 
 
 

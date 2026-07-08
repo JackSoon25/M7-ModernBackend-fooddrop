@@ -24,16 +24,16 @@
                 <% for (let c of cuisines) { %>
                     <tr>
                         <td>
-                            <%= c.cusines.cuisine_id %>
+                            <%= c.cuisine_id %>
                         </td>
                         <td>
-                            <%= c.cusines.cuisine_name %>
+                            <%= c.cuisine_name %>
                         </td>
                         <td>
                             <a class="btn btn-primary btn-sm"
-                                href="/cuisine/<%= c.cuisines.cuisine_id %>/update">Update</a>
+                                href="/cuisine/<%= c.cuisine_id %>/update">Update</a>
 
-                            <a class="btn btn-danger btn-sm" href="/cuisine/<%= c.cuisines.cuisine_id %>/delete">
+                            <a class="btn btn-danger btn-sm" href="/cuisine/<%= c.cuisine_id %>/delete">
                                 Delete
                             </a>
                         </td>
