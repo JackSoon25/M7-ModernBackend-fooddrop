@@ -12,17 +12,18 @@ app.set('view engine', 'ejs');
 // tell EJS which layout to see
 app.set('layout', 'layout/base');
 
-// link to MariaDB
-const { createPool } = require('mysql2/promise');
-// create a connection pool
-const connection = createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    database: process.env.DB_NAME,
-    password: process.env.DB_PASSWORD,
-    port: process.env.DB_PORT
-});
+// link to MariaDB via db.js
+const {connection} = require('./db');
+// call different routers for vendors, users, offers, and cuisines
+// app.use('/vendors', vendorRouter);
+// app.use('/users', userRouter);
+// app.use('/offers', offerRouter);
+// app.use('/cuisine', cuisineRouter);
 
+
+
+
+// Home route
 app.get('/', function(req, res) {
     const todayDate = new Date().toLocaleDateString("en-GB");
     res.render('home', {
