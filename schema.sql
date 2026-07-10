@@ -23,8 +23,8 @@ CREATE TABLE IF NOT EXISTS vendors (
     longitude DECIMAL(9,6) NOT NULL,
     created_at TIMESTAMP NOT NULL,
     updated_at TIMESTAMP NOT NULL,
-    cuisine_id INT UNSIGNED NOT NUll,
-    FOREIGN KEY (cuisine_id) REFERENCES cuisines (cuisine_id)
+    cuisine_id INT,
+    FOREIGN KEY (cuisine_id) REFERENCES cuisines (cuisine_id) ON DELETE SET NULL
 );
 
 -- offers
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS offers (
     expiry_time DATETIME NOT NULL,
     created_at TIMESTAMP NOT NULL,
     vendor_id INT UNSIGNED NOT NULL,
-    FOREIGN KEY (vendor_id) REFERENCES vendors(vendor_id)
+    FOREIGN KEY (vendor_id) REFERENCES vendors(vendor_id) ON DELETE CASCADE
 );
 
 -- users
@@ -50,8 +50,8 @@ CREATE TABLE IF NOT EXISTS redemptions (
     redemption_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     offer_id INT UNSIGNED NOT NULL,
     user_id INT UNSIGNED NOT NULL,
-    FOREIGN KEY (offer_id) REFERENCES offers (offer_id),
-    FOREIGN KEY (user_id)  REFERENCES users (user_id)
+    FOREIGN KEY (offer_id) REFERENCES offers (offer_id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id)  REFERENCES users (user_id) ON DELETE CASCADE
 );
 
 -- notes
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS notes (
     note_text TEXT NOT NULL,
     created_at TIMESTAMP NOT NULL,
     redemption_id INT UNSIGNED NOT NULL,
-    FOREIGN KEY (redemption_id) REFERENCES redemptions(redemption_id)
+    FOREIGN KEY (redemption_id) REFERENCES redemptions(redemption_id) ON DELETE CASCADE
 );
 
 

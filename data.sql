@@ -7,6 +7,20 @@
 
 USE fooddrop;
 
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- Clear out the existing data completely
+TRUNCATE TABLE cuisines;
+TRUNCATE TABLE vendors;
+TRUNCATE TABLE offers;
+TRUNCATE TABLE users;
+TRUNCATE TABLE redemptions;
+TRUNCATE TABLE notes;
+
+-- 3. Turn foreign key checks back on
+SET FOREIGN_KEY_CHECKS = 1;
+
+
 -- cuisines (5)
 -- ---------------------------------------------------------------------
 INSERT INTO cuisines (cuisine_id, cuisine_name) VALUES

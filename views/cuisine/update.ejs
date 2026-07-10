@@ -1,0 +1,13 @@
+<%- contentFor('title') %>
+    Update Cuisine
+
+    <%- contentFor('body') %>
+        <h1>Update Cuisine</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label>New Cuisine Name</label>
+                <input type="text" class="form-control" name="cuisine_name" value="<%= cuisine.cuisine_name %>" />      
+        </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form> 
+        
