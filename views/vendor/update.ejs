@@ -1,0 +1,48 @@
+<%- contentFor('title') %>
+    Update Vendor
+
+    <%- contentFor('body') %>
+        <h1>Update Vendor Profile</h1>
+        <form method="POST">
+            <div>
+                <label class = "form-label fw-bold">Vendor Name</label>
+                <input type="text" class="form-control" name="vendor_name" value="<%= vendor.vendor_name %>" />
+            </div>
+            <div>
+                <label class = "form-label fw-bold">Mobile Number</label>
+                <input type="text" class="form-control" name="mobile_number" value="<%= vendor.mobile_number %>" />
+            </div>
+            <div>
+                <label class = "form-label fw-bold">Password</label>
+                <input type="text" class="form-control" name="pwd" value="<%= vendor.pwd %>" />
+            </div>
+            <div>
+                <label class = "form-label fw-bold">Unit number</label>
+                <input type="text" class="form-control" name="unit_number" value="<%= vendor.unit_number %>" />
+            </div>
+            <div>
+                <label class = "form-label fw-bold">Building Name</label>
+                <input type="text" class="form-control" name="building_number" value="<%= vendor.building_number %>" />
+            </div>
+            <div>
+                <label class = "form-label fw-bold">Street Name</label>
+                <input type="text" class="form-control" name="street_name" value="<%= vendor.street_name %>" />
+            </div>
+            <div>
+                <label class = "form-label fw-bold">Postal Code</label>
+                <input type="text" class="form-control" name="postal_code" value="<%= vendor.postal_code %>" />
+            </div>
+            <div>
+                <label class = "form-label fw-bold">Cuisine</label>
+                <select name="cuisine_id" class="form-control" >
+                    <% cuisines.forEach((c) => { %>
+                        <option value="<%= c.cuisine_id %>" <%= (c.cuisine_id === vendor.cuisine_id) ? 'selected' : '' %>>
+                            <%= c.cuisine_name %>
+                        </option>
+                    <% }) %>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form> 
+        

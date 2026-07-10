@@ -1,0 +1,44 @@
+<%- contentFor('title') %>
+    User Management
+
+    <%- contentFor('body') %>
+        <h1>All Users</h1>
+        <div>
+            <a class="btn btn-primary" href="/user/create">Create New User</a>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>User Mobile Number</th>
+                    <th>password</th>
+                    <th>Joined Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(u=> { %>
+                    <tr>
+                        <td>
+                            <%= u.user_id %>
+                        </td>
+                        <td>
+                            <%= u.mobile_number %>
+                        </td>
+                        <td>
+                            <%= u.pwd %>
+                        </td>
+                        <td>
+                            <%= new Date(u.created_at).toLocaleDateString("en-GB") %>
+                        </td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" href="/user/<%= u.user_id %>/update">
+                                Update
+                            </a>
+                            <a class="btn btn-danger btn-sm" href="/user/<%= u.user_id %>/delete">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>

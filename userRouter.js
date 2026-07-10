@@ -20,7 +20,7 @@ router.get('/create', async function (req, res) {
 router.post('/create', async function (req, res) {
     try {
         const { mobile_number, pwd} = req.body;
-        const sql = `INSERT INTO users (mobile_number, pwd) VALUES (?, ?)`;
+        const sql = `INSERT INTO users (mobile_number, pwd, created_at) VALUES (?, ?, NOW())`;
         await connection.execute(sql, [mobile_number, pwd]);
         res.redirect('/user');
     } catch (error) {

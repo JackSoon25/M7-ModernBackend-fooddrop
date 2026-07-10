@@ -1,0 +1,47 @@
+<%- contentFor("title") %>
+    Vendor Creation
+
+    <%- contentFor("body") %>
+        <form method="POST">
+            <h1> New Vendor Creation</h1>
+            <div>
+                <label class = "form-label fw-bold">Vendor Name</label>
+                <input type="text" class="form-control" name="vendor_name" required />
+            </div>
+            <div>
+                <label class = "form-label fw-bold">Mobile Number</label>
+                <input type="text" class="form-control" name="mobile_number" required />
+            </div>
+            <div>
+                <label class = "form-label fw-bold">Password</label>
+                <input type="text" class="form-control" name="pwd" required />
+            </div>
+            <div>
+                <label class = "form-label fw-bold">Unit number</label>
+                <input type="text" class="form-control" name="unit_number" required />
+            </div>
+            <div>
+                <label class = "form-label fw-bold">Building Name</label>
+                <input type="text" class="form-control" name="building_number" />
+            </div>
+            <div>
+                <label class = "form-label fw-bold">Street Name</label>
+                <input type="text" class="form-control" name="street_name" required />
+            </div>
+            <div>
+                <label class = "form-label fw-bold">Postal Code</label>
+                <input type="text" class="form-control" name="postal_code" required />
+            </div>
+            <div>
+                <label class = "form-label fw-bold">Cuisine</label>
+                <select name="cuisine_id" class="form-control" required>
+                    <% cuisines.forEach((c) => { %>
+                        <option value="<%= c.cuisine_id %>">
+                            <%= c.cuisine_name %>
+                        </option>
+                    <% }) %>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>

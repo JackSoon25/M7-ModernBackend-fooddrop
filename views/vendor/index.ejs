@@ -1,0 +1,56 @@
+<%- contentFor('title') %>
+    Vendor Management
+
+    <%- contentFor('body') %>
+        <h1>All Vendors</h1>
+        <div>
+            <a class="btn btn-primary" href="/vendor/create">Create New Vendor</a>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Vendor Name</th>
+                    <th>Mobile Number</th>
+                    <th>Unit Number</th>
+                    <th>Street Name</th>
+                    <th>Postal Code</th>
+                    <th>Creation Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% vendors.forEach(v=> { %>
+                    <tr>
+                        <td>
+                            <%= v.vendor_id %>
+                        </td>
+                        <td>
+                            <%= v.vendor_name %>
+                        </td>
+                        <td>
+                            <%= v.mobile_number %>
+                        </td>
+                        <td>
+                            <%= v.unit_number %>
+                        </td>
+                        <td>
+                            <%= v.street_name %>
+                        </td>
+                        <td>
+                            <%= v.postal_code %>
+                        </td>
+                        <td>
+                            <%= new Date(v.created_at).toLocaleDateString("en-GB") %>
+                        </td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" href="/vendor/<%= v.vendor_id %>/update">
+                                Update
+                            </a>
+                            <a class="btn btn-danger btn-sm" href="/vendor/<%= v.vendor_id %>/delete">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
