@@ -14,12 +14,13 @@ app.set('layout', 'layout/base');
 
 // rename router
 const { router: cuisineRouter } = require('./cuisineRouter');
+const { router: userRouter } = require('./userRouter');
 
 // link to MariaDB via db.js
 const {connection} = require('./db');
 // call different routers for vendors, users, offers, and cuisines
 // app.use('/vendor', vendorRouter);
-// app.use('/user', userRouter);
+app.use('/user', userRouter);
 // app.use('/offer', offerRouter);
 app.use('/cuisine', cuisineRouter);
 
