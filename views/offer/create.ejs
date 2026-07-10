@@ -1,0 +1,27 @@
+<%- contentFor("title") %>
+    Offer Creation
+
+    <%- contentFor("body") %>
+        <form method="POST">
+            <h1> New Offer Creation</h1>
+            <div>
+                <label class="form-label fw-bold">Offer Description</label>
+                <input type="text" class="form-control" name="offer_description" required />
+            </div>
+            <div>
+                <label class="form-label fw-bold">Expiry Time</label>
+                <input type="datetime-local" class="form-control" name="expiry_time" required />
+            </div>
+            <div>
+                <label class="form-label fw-bold">Vendor</label>
+                <select name="vendor_id" class="form-control" required>
+                    <% vendors.forEach((v)=> { %>
+                        <option value="<%= v.vendor_id %>">
+                            <%= v.vendor_name %>
+                        </option>
+                        <% }) %>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>

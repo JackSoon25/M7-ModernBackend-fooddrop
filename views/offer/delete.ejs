@@ -1,0 +1,16 @@
+<%- contentFor("title") %>
+    Delete Offer
+
+    <%- contentFor("body") %>
+        <form method="POST" class="mt-3">
+            <div class = "alert alert-danger">Are you sure you want to delete the offer "<strong>
+                    <%= offer.offer_description %>
+                </strong>", provided by vendor <strong><%= vendor.vendor_name %></strong>?
+            </div>
+            <div>
+                <a href="/offer" class="btn btn-success">Cancel</a>
+                <button type = "submit" class = "btn btn-danger">
+                    Delete
+                </button>
+            </div>
+        </form>

@@ -1,0 +1,53 @@
+<%- contentFor('title') %>
+    Offer Management
+
+    <%- contentFor('body') %>
+        <h1>All Offers</h1>
+        <div>
+            <a class="btn btn-primary" href="/offer/create">Create New Offer</a>
+        </div>
+        <table class="table form-control-plaintext">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Offer Description</th>
+                    <th>Expiry Time</th>
+                    <th>Creation Date</th>
+                    <th>Vendor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% offers.forEach(o=> { %>
+                    <tr>
+                        <td>
+                            <%= o.offer_id %>
+                        </td>
+                        <td>
+                            <%= o.offer_description %>
+                        </td>
+                        <td>
+                            <%= new Date(o.expiry_time).toLocaleDateString("en-GB") %>
+                        </td>
+                        <td>
+                            <%= new Date(o.created_at).toLocaleDateString("en-GB") %>
+                        </td>
+                        <td>
+                            <% let matchedVendor=vendors.find(v=> v.vendor_id === o.vendor_id); %>
+                                <p class="form-control-plaintext">
+                                    <%= matchedVendor ? matchedVendor.vendor_name : 'Unknown Vendor' %>
+                                </p>
+                                <input type="hidden" name="vendor_id" value="<%= o.vendor_id %>" />
+                        </td>
+
+                        <td>
+                            <a class="btn btn-primary btn-sm" href="/offer/<%= o.offer_id %>/update">
+                                Update
+                            </a>
+                            <a class="btn btn-danger btn-sm" href="/offer/<%= o.offer_id %>/delete">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
