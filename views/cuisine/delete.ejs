@@ -1,0 +1,16 @@
+<%- contentFor("title") %>
+    Delete Cuisine
+
+    <%- contentFor("body") %>
+        <form method="POST" class="mt-3">
+            <div class = "alert alert-danger">Are you sure you want to delete the cuisine <strong>
+                    <%= cuisine.cuisine_name %>
+                </strong>?
+            </div>
+            <div>
+                <a href="/cuisine" class="btn btn-success">Cancel</a>
+                <button type = "submit" class = "btn btn-danger">
+                    Delete
+                </button>
+            </div>
+        </form>

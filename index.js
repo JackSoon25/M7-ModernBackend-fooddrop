@@ -18,9 +18,9 @@ const { router: cuisineRouter } = require('./cuisineRouter');
 // link to MariaDB via db.js
 const {connection} = require('./db');
 // call different routers for vendors, users, offers, and cuisines
-// app.use('/vendors', vendorRouter);
-// app.use('/users', userRouter);
-// app.use('/offers', offerRouter);
+// app.use('/vendor', vendorRouter);
+// app.use('/user', userRouter);
+// app.use('/offer', offerRouter);
 app.use('/cuisine', cuisineRouter);
 
 

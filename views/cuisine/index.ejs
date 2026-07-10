@@ -2,17 +2,10 @@
     Cuisines Management
 
     <%- contentFor('body') %>
-
         <h1>All Cuisines</h1>
-
-        <h2>Search</h2>
-
-
-
-        <h2>Found Cuisines</h2>
-        <!-- <div>
-            <a class="btn btn-primary" href="/customers/create">Create</a>
-        </div> -->
+        <div>
+            <a class="btn btn-primary" href="/cuisine/create">Create New Cuisine</a>
+        </div>
         <table class="table">
             <thead>
                 <tr>
@@ -21,7 +14,7 @@
                 </tr>
             </thead>
             <tbody>
-                <% for (let c of cuisines) { %>
+                <% cuisines.forEach(c=> { %>
                     <tr>
                         <td>
                             <%= c.cuisine_id %>
@@ -30,14 +23,14 @@
                             <%= c.cuisine_name %>
                         </td>
                         <td>
-                            <a class="btn btn-primary btn-sm"
-                                href="/cuisine/<%= c.cuisine_id %>/update">Update</a>
-
+                            <a class="btn btn-primary btn-sm" href="/cuisine/<%= c.cuisine_id %>/update">
+                                Update
+                            </a>
                             <a class="btn btn-danger btn-sm" href="/cuisine/<%= c.cuisine_id %>/delete">
                                 Delete
                             </a>
                         </td>
                     </tr>
-                    <% } %>
+                    <% }) %>
             </tbody>
         </table>
