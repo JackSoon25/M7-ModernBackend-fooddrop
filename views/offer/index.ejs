@@ -2,11 +2,27 @@
     Offer Management
 
     <%- contentFor('body') %>
-        <h1>All Offers</h1>
+        <h1>Offer Management</h1>
+        <h2>Search</h2>
+        <form method="GET" class="mt-2 mb-2">
+            <div>
+                <label>Offer Description</label>
+                <input type="text" name="offer_description" class="form-control" value="<%= searchParams.offer_description %>" />
+            </div>
+            <div>
+                <label>Expiry Time</label>
+                <input type="datetime-local" name="expiry_time" class="form-control" value="<%= searchParams.expiry_time || '' %>" />
+            </div>
+
+            <button class="btn btn-primary mt-3">Search</button>
+        </form>
+
+
+        <h2>Found Offers</h2>
         <div>
             <a class="btn btn-primary" href="/offer/create">Create New Offer</a>
         </div>
-        <table class="table form-control-plaintext">
+        <table class="table">
             <thead>
                 <tr>
                     <th>ID</th>

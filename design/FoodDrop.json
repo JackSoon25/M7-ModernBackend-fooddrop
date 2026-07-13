@@ -51,7 +51,7 @@
         },
         {
           "id": "Lr2ED0ceYRutUZ_bscYaR",
-          "name": "password",
+          "name": "pwd",
           "dataType": "VARCHAR(255)",
           "isPrimaryKey": false,
           "isNullable": false
@@ -81,20 +81,6 @@
           "id": "6NbLQ6p06Ud3jX5dXsOSZ",
           "name": "postal_code",
           "dataType": "VARCHAR(10)",
-          "isPrimaryKey": false,
-          "isNullable": false
-        },
-        {
-          "id": "-An0ZpW1GSMHfwVtf9SAB",
-          "name": "latitude",
-          "dataType": "DECIMAL(9,6)",
-          "isPrimaryKey": false,
-          "isNullable": false
-        },
-        {
-          "id": "SxkhxeLbI9M3c79wZ9UW0",
-          "name": "longitude",
-          "dataType": "DECIMAL(9,6)",
           "isPrimaryKey": false,
           "isNullable": false
         },
@@ -184,7 +170,7 @@
         },
         {
           "id": "miksvv4qOq3T4RUjZWPPX",
-          "name": "password",
+          "name": "pwd",
           "dataType": "VARCHAR(255)",
           "isPrimaryKey": false,
           "isNullable": false

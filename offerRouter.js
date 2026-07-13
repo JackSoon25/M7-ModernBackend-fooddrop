@@ -4,12 +4,35 @@ const { connection } = require('./db');
 
 // offer home route (aka CRUD - Read)
 router.get('/', async function (req, res) {
-    const sql = `SELECT * FROM offers`;
+    const { offer_description, expiry_time, vendor_id } = req.query;
+    const bindings=[];
+    
+    let sql = `SELECT * FROM offers
+                JOIN vendors ON offers.vendor_id = vendors.vendor_id
+                WHERE 1`;
+
+    if (offer_description) {
+        sql += ` AND offer_description LIKE ?`;
+        bindings.push(`%${offer_description}%`);
+    }
+    if (expiry_time) {
+        const normalizedExpiryTime = expiry_time.replace('T', ' ').replace('Z', '') + ':00';
+        console.log("expiry_time", expiry_time);
+        console.log("normalizedExpiryTime", normalizedExpiryTime);
+        sql += ` AND expiry_time >= ?`;
+        bindings.push(normalizedExpiryTime);
+    }
+
+    sql += ' ORDER BY offers.created_at DESC';
+
     // Note: .execute doesn't support "nestTables".  Only .query support the "nestTables": ture
-    const [offers] = await connection.execute(sql);
+    const [offers] = await connection.execute(sql, bindings);
     const [vendors] = await connection.execute(`SELECT * FROM vendors`);
+
+
     res.render('offer/index', {
         offers,
+        searchParams: { offer_description, expiry_time, vendor_id },
         vendors
     });
 });
